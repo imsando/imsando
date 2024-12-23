@@ -40,6 +40,6 @@ Always striving to approach every task with a positive mindset. 😇✨
 
 #### 🐻‍❄️ My Github Activity
 <a href="https://github.com/devxb/gitanimals">
-        <img src="https://render.gitanimals.org/farms/{LeeSeunghyeon-1}" alt="GitAnimals"/>
+        <img src="https://render.gitanimals.org/farms/{imsando}" alt="GitAnimals"/>
       </a>
 
