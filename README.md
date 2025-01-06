@@ -1,6 +1,6 @@
 ### 🌟 About Me  
-Hello there! 👋  
-I am a **Backend Developer**.  
+Hello ! 👋  
+I'm **Backend Developer**.  
 Always striving to approach every task with a positive mindset. 😇✨
 
 ---
@@ -39,7 +39,9 @@ Always striving to approach every task with a positive mindset. 😇✨
 <br>
 
 #### 🐻‍❄️ My Github Activity
-<a href="https://github.com/devxb/gitanimals">
+![](./profile-3d-contrib/profile-gitblock.svg)
+
+<!-- <a href="https://github.com/devxb/gitanimals">
         <img src="https://render.gitanimals.org/farms/{imsando}" alt="GitAnimals"/>
-      </a>
+      </a> -->
 
