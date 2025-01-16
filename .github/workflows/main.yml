@@ -19,7 +19,11 @@ jobs:
         run: |
           git config user.name imsando
           git config user.email ujm0524@naver.com
-          git pull --rebase  # 이 줄 추가
-          git add -A .
-          git commit -m "generated"
+          # 변경 사항이 있는지 확인 후 처리
+          if [[ -n "$(git status --porcelain)" ]]; then
+            git add -A
+            git commit -m "generated" || echo "No changes to commit"
+          fi
+          git pull --rebase
           git push
+      
