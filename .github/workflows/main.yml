@@ -19,11 +19,20 @@ jobs:
         run: |
           git config user.name imsando
           git config user.email ujm0524@naver.com
-          # 변경 사항이 있는지 확인 후 처리
+
+          # 모든 변경사항을 스테이징
+          git add -A
+
+          # 변경사항이 있으면 커밋
           if [[ -n "$(git status --porcelain)" ]]; then
-            git add -A
-            git commit -m "generated" || echo "No changes to commit"
+            git commit -m "generated"
           fi
+
+          git stash
+
           git pull --rebase
+
+          git stash pop
+
           git push
       
