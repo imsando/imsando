@@ -1,5 +1,5 @@
 ### 🌟 About Me  
-Hello ! 👋  
+Hello! 👋  
 I'm **Backend Developer**.  
 Always striving to approach every task with a positive mindset. 😇✨
 
