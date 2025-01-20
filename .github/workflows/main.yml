@@ -2,17 +2,19 @@ name: GitHub-Profile-3D-Contrib
 
 on:
   schedule:
-    - cron: "0 18 * * *"  # 크론 표현식 수정
+    - cron: "0 18 * * *"
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
     name: generate-github-profile-3d-contrib
+    permissions: # 권한 추가
+      contents: write
     steps:
-      - uses: actions/checkout@v3  # v2에서 v3로 업데이트
+      - uses: actions/checkout@v3
         with:
-          fetch-depth: 0  # 전체 히스토리 가져오기
+          fetch-depth: 0
           
       - uses: yoshi389111/github-profile-3d-contrib@0.6.0
         env:
@@ -24,12 +26,8 @@ jobs:
           git config --local user.name "imsando"
           git config --local user.email "ujm0524@naver.com"
           
-          # 변경사항이 있는지 확인하고 커밋
-          if git diff --quiet; then
-            echo "No changes to commit"
-            exit 0
-          else
-            git add -A
-            git commit -m "Generated 3D Contrib Graph"
-            git push
-          fi
+          git add -A
+          git commit -m "Generated 3D Contrib Graph" || exit 0
+          
+          # Force push to avoid conflicts
+          git push --force origin main
