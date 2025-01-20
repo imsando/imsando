@@ -1,33 +1,25 @@
 name: GitHub-Profile-3D-Contrib
-
 on:
   schedule:
-    - cron: "0 18 * * *"
+    - cron: "0 18 * * *"  
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
     name: generate-github-profile-3d-contrib
-    permissions: # 권한 추가
-      contents: write
+    permissions:
+      contents: write    
     steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-          
+      - uses: actions/checkout@v2
       - uses: yoshi389111/github-profile-3d-contrib@0.6.0
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.TOKEN }} 
           USERNAME: ${{ github.repository_owner }}
-          
       - name: Commit & Push
         run: |
-          git config --local user.name "imsando"
-          git config --local user.email "ujm0524@naver.com"
-          
-          git add -A
-          git commit -m "Generated 3D Contrib Graph" || exit 0
-          
-          # Force push to avoid conflicts
-          git push --force origin main
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add -A .
+          git commit -m "generated"
+          git push
